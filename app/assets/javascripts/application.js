@@ -38,12 +38,21 @@ $(document).ready(function () {
         "owner": "Evan",
         "name": "Trixie",
         "preferences": [
-          {"favoriteFood": "protien"},
+          {"favoriteFood": "protein"},
           {"favoriteToy": "weights"}
         ]
-      }
+      },
     ]
   };
-  // Write come code to add the dogs to the table !!!!
+  $.each(gschoolDogs["dogs"], function (index, element) {
+    {
+      var row = $("<tr />")
+      $("#dogs").append(row);
+      row.append($("<td>" + element.owner + "</td>"));
+      row.append($("<td>" + element.name + "</td>"));
+      row.append($("<td>" + element.preferences[0].favoriteFood + "</td>"));
+      row.append($("<td>" + element.preferences[1].favoriteToy + "</td>"));
+    }
+  });
 });
 
